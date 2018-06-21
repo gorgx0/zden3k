@@ -1,8 +1,6 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
-locale-gen en_UK.UTF-8
-locale-gen en_US.UTF-8
-dpkg-reconfigure locales
+locale-gen
 apt-get update
 apt-get install -y \
   tmux \
