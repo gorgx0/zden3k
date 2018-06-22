@@ -28,4 +28,8 @@ apt-get install -y \
   php-fpm \
   composer \
   php7.0-xml \
-  php7.0-sqlite3
+  php7.0-sqlite3 \
+  curl
+
+curl -LsS https://symfony.com/installer -o /usr/local/bin/symfony
+chmod a+x /usr/local/bin/symfony
