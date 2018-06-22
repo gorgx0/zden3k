@@ -1,8 +1,8 @@
 node default {
 
   include ntp
-  accounts::user { 'gorg':
 
+  accounts::user { 'gorg':
     groups => ['sudo'],
     sshkeys => [
       'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCdmlkC+0AeXoj4htUrPz3N/82rpJT19QC+HHm7MUhcJbKuh78nGdtQ4Sw2uIAf53IrB0FnjxDwSAQJrgvV5Fa9km1zC8SSquDjubayM+Xyn/V39sptyYFF+mOJzRDEytSB1MZqRd4FJ1xJ460gGFOxfCKbTYY6xPY0U9H31xllLbTvr2xq6ejI6vTV7Z8m/1J5mqCnawioYE/dFPIhFy8zr8huN0v5ft/ZHKv0x3d4v3qiSXRvqCy9bJUW4x8IRMMJjrw+94Jsyz/RvSejLkqwVr8UW/CDNUq6A9YS8FUvKdVeZN+vUSmf+p2pg5KIVYOEXtWZTmLCKQp7dlZyvjPT gorg@ubuntu'
