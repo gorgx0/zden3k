@@ -8,6 +8,7 @@ export LC_ALL=en_GB.UTF-8
 echo 'LANG=en_GB.UTF-8' >> /etc/environment
 echo 'LANGUAGE=en_GB.UTF-8' >> /etc/environment
 echo 'LC_ALL=en_GB.UTF-8' >> /etc/environment
+timedatectl set-timezone   Europe/Warsaw
 apt-get update
 apt-get install -y \
   tmux \
