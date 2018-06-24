@@ -20,4 +20,17 @@ node default {
     path => '/etc/sudoers',
     line => '%sudo ALL=(ALL) NOPASSWD: ALL',
   }
+
+  file_line{'mariadb_network_access':
+    ensure            => present,
+    path              => '/etc/mysql/mariadb.conf.d/50-server.cnf',
+    line              => 'bind-address            = 0.0.0.0',
+    match             => '^bind-address\s+=\s+127\.0\.0\.1',
+    match_for_absence => true,
+    notify            => Service['mariadb'],
+  }
+
+  service{'mariadb':
+    ensure => 'running',
+  }
 }
