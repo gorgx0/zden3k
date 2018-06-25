@@ -5,7 +5,8 @@ node default {
   accounts::user { 'gorg':
     groups => ['sudo'],
     sshkeys => [
-      'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCdmlkC+0AeXoj4htUrPz3N/82rpJT19QC+HHm7MUhcJbKuh78nGdtQ4Sw2uIAf53IrB0FnjxDwSAQJrgvV5Fa9km1zC8SSquDjubayM+Xyn/V39sptyYFF+mOJzRDEytSB1MZqRd4FJ1xJ460gGFOxfCKbTYY6xPY0U9H31xllLbTvr2xq6ejI6vTV7Z8m/1J5mqCnawioYE/dFPIhFy8zr8huN0v5ft/ZHKv0x3d4v3qiSXRvqCy9bJUW4x8IRMMJjrw+94Jsyz/RvSejLkqwVr8UW/CDNUq6A9YS8FUvKdVeZN+vUSmf+p2pg5KIVYOEXtWZTmLCKQp7dlZyvjPT gorg@ubuntu'
+      'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCdmlkC+0AeXoj4htUrPz3N/82rpJT19QC+HHm7MUhcJbKuh78nGdtQ4Sw2uIAf53IrB0FnjxDwSAQJrgvV5Fa9km1zC8SSquDjubayM+Xyn/V39sptyYFF+mOJzRDEytSB1MZqRd4FJ1xJ460gGFOxfCKbTYY6xPY0U9H31xllLbTvr2xq6ejI6vTV7Z8m/1J5mqCnawioYE/dFPIhFy8zr8huN0v5ft/ZHKv0x3d4v3qiSXRvqCy9bJUW4x8IRMMJjrw+94Jsyz/RvSejLkqwVr8UW/CDNUq6A9YS8FUvKdVeZN+vUSmf+p2pg5KIVYOEXtWZTmLCKQp7dlZyvjPT gorg@ubuntu',
+      'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCsvkMMBR14os5EhMBjeuVxTmvFNW5zqTwRXQT+193kosxWOylSf0J3NOx3g1j7uVE8u0vwFh6G09M7pW5nsazb2S4YlITOhCzkO7wALIOoHH9ISRLiSy0CN/2JiW37wChYY9KLnJ2bDt2yBcAJR9a8++Q5btY4W8lD72A/ZTJx3q/GcBArbEPTnjOnXHP2qur/Ta80y8eYON6VpZkZyLC6JygQDae/SXJltiKuyZdp1Pjm2d2haDfrJz5zaYrid4oA1qUVAmKklZp9fXxL4mEqzbE2Gfw7AY7L/4jLx/2v+vKUsB61X2R/gr5rAmTbgxe6x/TWmmsFTL+xFQ90l7/P krasowsm@CL04414'
     ]
   }
   accounts::user { 'zdenek':
