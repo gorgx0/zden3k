@@ -7,6 +7,7 @@
 
 Vagrant.configure("2") do |config|
   config.vm.box = "debian/contrib-stretch64"
+  config.vm.hostname = "php-symfony-vagrant"
   config.puppet_install.puppet_version = :latest
   config.vm.network "forwarded_port", guest: 80, host: 8080
   config.vm.network "forwarded_port", guest: 8000, host: 8000
