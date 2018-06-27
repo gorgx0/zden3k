@@ -31,5 +31,9 @@ apt-get install -y \
   php7.0-sqlite3 \
   curl
 
+echo "Installing symfony tool"
 curl -LsS https://symfony.com/installer -o /usr/local/bin/symfony
 chmod a+x /usr/local/bin/symfony
+
+echo "Installin teleconsole"
+curl https://www.teleconsole.com/get.sh | sh
