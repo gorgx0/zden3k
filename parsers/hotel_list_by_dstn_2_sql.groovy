@@ -3,32 +3,36 @@
 import groovy.sql.Sql
 
 def sql = Sql.newInstance("jdbc:mariadb://localhost/youtravel",'youtravel','PASS','org.mariadb.jdbc.Driver')
-def countryInsertSql = 'insert into Countries (Name, Code, ytID) values (?,?,?)'
-def destinationInsertSql = 'INSERT INTO Destinations (name, ytID, countryId,ISO_code_1,ISO_code_2,ISO_code_3) VALUES (?,?,?,?,?,?);'
-def resortInserSql = 'insert into Resorts(Name, ytID, destinationId) values(?,?,?)'
-def HtSearchRq = new XmlSlurper().parse("You_travel_countries_and_destinations.xml")
+def hotelInsertSql = 'insert into Hotels(name, hotelId, latitude, longitude, resort_name, resort_id, destination_name, destinatio_id, iso_code_1, iso_code_2, iso_code_3, country_code, country_id, country_name ) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?)'
+def htsearchrq = new XmlSlurper().parse("hotel_list_by_dstn.xml")
 
-HtSearchRq.'*'.findAll {
-    node -> node.name() == 'Country'
+htsearchrq.'*'.findAll {
+    node -> node.name() == 'country'
 }.each { country ->
-    println "Adding country: ${country.@Name.text()}"
-    def countryInsertParams = [country.@Name.text(),country.@Code.text(),country.@ID.text()]
-    def countryInsertResult = sql.executeInsert(countryInsertSql,countryInsertParams)
-    def countryId = countryInsertResult[0][0]
-    country.Destination.each {
+    country.destination.each {
         destination ->
-            println "Adding destination: ${destination.@name.text()}"
-            def isoCode1 = destination.ISO_Codes.@Code_1?.text()
-            def isoCode2 = destination.ISO_Codes.@Code_2?.text()
-            def isoCode3 = destination.ISO_Codes.@Code_3?.text()
-            def destinationInsertParams = [destination.@name.text(), destination.@ID.text(), countryId, isoCode1, isoCode2, isoCode3]
-            def destinationInsertresult = sql.executeInsert(destinationInsertSql, destinationInsertParams)
-            def destinationId = destinationInsertresult[0][0]
-        destination.Resort.each {
-            resort ->
-                println "Adding resort: ${resort.text()}"
-                def resortInsertParams = [resort.text(),resort.@ID.text(), destinationId]
-                sql.executeInsert(resortInserSql,resortInsertParams)
+        destination.resort.each {
+            resort -> resort.hotel.each {
+                hotel ->
+                    def params = [
+                            hotel.hotel_name.text(),
+                            hotel.hotel_id.text(),
+                            hotel.mapping.latitude.text(),
+                            hotel.mapping.longitude.text(),
+                            resort.resort_name.text(),
+                            resort.@id?.text(),
+                            destination.@name.text(),
+                            destination.@id.text(),
+                            destination.iso_codes.@code_1?.text(),
+                            destination.iso_codes.@code_2?.text(),
+                            destination.iso_codes.@code_3?.text(),
+                            country.@code.text(),
+                            country.@id.text(),
+                            country.@name.text()
+                    ]
+                    println params
+                    sql.executeInsert(hotelInsertSql,params)
+            }
 
         }
     }
