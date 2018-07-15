@@ -28,6 +28,7 @@ apt-get install -y \
   php-fpm \
   composer \
   php7.0-xml \
+  php7.0-mysql \
   php7.0-sqlite3 \
   curl
 
