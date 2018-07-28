@@ -1,4 +1,4 @@
-create database youtravel ;
-create user 'youtravel'@'%'  identified by 'PASS' ;
-grant all on youtravel.* to 'youtravel'@'%' ;
+create database YT ;
+create user 'YT'@'%'  identified by 'PASS' ;
+grant all on YT.* to 'YT'@'%' ;
 flush privileges ;
