@@ -9,6 +9,12 @@ services:
       - "mariadb:YT"
     volumes:
       -  ${PWD}/project/you-travel/www:/var/web
+    environment:
+      - MYSQL_SERVER=mariadb
+      - MYSQL_USER=YT
+      - MYSQL_PASSWORD=PASS
+      - MYSQL_DB=YT
+
   mariadb:
     container_name: mariadb
     image: "mariadb:10.1"
