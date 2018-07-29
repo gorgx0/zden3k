@@ -15,3 +15,7 @@ populate data
 docker-compose -f docker/docker-compose.yml exec -T mariadb mysql -u root YT < database/Hotels.dump.sql
 ```
 
+get the latest data
+```
+docker-compose -f docker/docker-compose.yml exec -T mariadb mysql YT -u root < project/you-travel/YTx/sql/29072018YT.sql
+```
