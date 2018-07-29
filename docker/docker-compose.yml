@@ -18,7 +18,11 @@ services:
   mariadb:
     container_name: mariadb
     image: "mariadb:10.1"
+    ports:
+      - 3306:3306
     environment:
       - MYSQL_ALLOW_EMPTY_PASSWORD=1
+    entrypoint: "docker-entrypoint.sh --bind-address=0.0.0.0"
+
     
   
