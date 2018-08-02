@@ -8,7 +8,7 @@ services:
     links: 
       - "mariadb:YT"
     volumes:
-      -  ${PWD}/project/you-travel/www:/var/web
+      -  ${PWD}/project/you-travel:/var/web
     environment:
       - MYSQL_SERVER=mariadb
       - MYSQL_USER=YT
