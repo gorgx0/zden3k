@@ -33,5 +33,7 @@ apt-get install -y \
   php-xdebug \
   curl
 
+printf "[xdebug]\nxdebug.idekey=youtravel\nxdebug.remote_enable=1\nxdebug.remote_host=10.0.2.2\n" >> /etc/php/7.0/cli/conf.d/20-xdebug.ini
+
 curl -LsS https://symfony.com/installer -o /usr/local/bin/symfony
 chmod a+x /usr/local/bin/symfony
