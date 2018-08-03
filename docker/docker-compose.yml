@@ -1,0 +1,28 @@
+version: '3'
+services:
+  php:
+    container_name: php
+    build: php/.
+    ports: 
+      - "8000:8000"
+    links: 
+      - "mariadb:YT"
+    volumes:
+      -  ${PWD}/project/you-travel:/var/web
+    environment:
+      - MYSQL_SERVER=mariadb
+      - MYSQL_USER=YT
+      - MYSQL_PASSWORD=PASS
+      - MYSQL_DB=YT
+
+  mariadb:
+    container_name: mariadb
+    image: "mariadb:10.1"
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=1
+    entrypoint: "docker-entrypoint.sh --bind-address=0.0.0.0"
+
+    
+  
