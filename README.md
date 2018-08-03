@@ -19,8 +19,14 @@ get the latest data
 ```
 docker-compose -f docker/docker-compose.yml exec -T mariadb mysql YT -u root < project/you-travel/YTx/sql/29072018YT.sql
 ```
-to start debugging 
+to start debugging php server
 
 ```
 http://localhost:8000/web/?XDEBUG_SESSION_START=youtravel
+```
+
+to debug php container
+```
+docker-compose -f docker/docker-compose.yml exec -T php apt install iputils-ping telnet && /bin/bash
+docker-compose -f docker/docker-compose.yml exec  php /bin/bash
 ```
