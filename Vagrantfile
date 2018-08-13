@@ -13,6 +13,7 @@ Vagrant.configure("2") do |config|
   config.vm.network "forwarded_port", guest: 8000, host: 8000
   config.vm.network "forwarded_port", guest: 3306, host: 3306
   config.vm.provision "shell", path: "provision.sh"
+  config.vm.provision "shell", path: "create_and_populate_database.sh"
   config.vm.provider "virtualbox" do |v|
 	    v.memory = 2048
 	      v.cpus = 2
