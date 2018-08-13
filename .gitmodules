@@ -1,4 +1,4 @@
 [submodule "project/you-travel"]
 	path = project/you-travel
 	url = git@gitlab.com:zden3k/you-travel.git
-	branch = devel
+	branch = html
