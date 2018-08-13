@@ -1,6 +1,6 @@
 clone repo 
 ```
-git clone -b development git@github.com:gorgx0/zden3k.git
+git clone -b development https://github.com/gorgx0/zden3k.git
 cd zden3k
 git submodule init
 git submodule update
