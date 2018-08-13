@@ -4,6 +4,8 @@ git clone -b development git@github.com:gorgx0/zden3k.git
 cd zden3k
 git submodule init
 git submodule update
+cd project/you-travel
+git checkout html
 ```
 
 
