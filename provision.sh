@@ -31,6 +31,7 @@ apt-get install -y \
   php7.0-mysql \
   php7.0-sqlite3 \
   php-xdebug \
+  php-mbstring \
   curl
 
 echo "Installing symfony tool"
