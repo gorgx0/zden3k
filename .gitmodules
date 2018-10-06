@@ -2,3 +2,6 @@
 	path = project/you-travel
 	url = git@gitlab.com:zden3k/you-travel.git
 	branch = html
+[submodule "project/itravel_ci"]
+	path = project/itravel_ci
+	url = git@gitlab.com:zden3k/itravel_ci.git
