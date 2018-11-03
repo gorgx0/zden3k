@@ -33,7 +33,6 @@ apt-get install -y \
   php-xdebug \
   php-mbstring \
   php-curl \
-  phpunit \
   curl
 
 echo "Installing symfony tool"
